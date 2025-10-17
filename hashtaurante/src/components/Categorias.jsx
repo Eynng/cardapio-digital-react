@@ -1,17 +1,43 @@
 // PascalCase
 // camelCase
-
 // rfce - Function
 // rafce - Arrow Function
 
-import React from "react";
+const Categorias = ({numCategoriaSelecionada, setNumCategoriaSelecionada}) => {
 
-const Categorias = () => {
   return (
     <div className="categorias">
-      <p className="categoria categoria--selecionada">Pratos Principais</p>
-      <p className="categoria">Sobremessas</p>
-      <p className="categoria">Bebidas</p>
+      <p
+        className={
+          "categoria" + (numCategoriaSelecionada === 0
+            ? " categoria--selecionada"
+            : "")
+        }
+        onClick={() => setNumCategoriaSelecionada(0)}
+      >
+        PratosPrincipais
+      </p>
+      <p
+        className={
+          "categoria" + (numCategoriaSelecionada === 1
+            ? " categoria--selecionada"
+            : "")
+        }
+        onClick={() => setNumCategoriaSelecionada(1)}
+      >
+        Sobremessas
+      </p>
+      <p
+        className={
+          "categoria" + (numCategoriaSelecionada === 2
+            ? " categoria--selecionada"
+            : "")
+        }
+        onClick={() => setNumCategoriaSelecionada(2)}
+      >
+        Bebidas
+      </p>
+      
     </div>
   );
 };
